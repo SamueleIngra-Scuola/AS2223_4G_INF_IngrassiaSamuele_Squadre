@@ -40,7 +40,7 @@ namespace Library
         /// <returns>True if player has been inserted</returns>
         public bool AddPlayer(Player player)
         {
-            // TODO T.2
+            if ()
         }
 
         /// <summary>
@@ -61,7 +61,12 @@ namespace Library
         /// <returns></returns>
         public string GetPlayers()
         {
-            // TODO T.4
+            string playerList = "";
+            foreach (Player player in players)
+            {
+                playerList += $"Giocatore: {player.Description()} - Ruolo: {player.Role}";
+            }
+            return playerList;
         }
 
         public string Name { get { return name; } }
