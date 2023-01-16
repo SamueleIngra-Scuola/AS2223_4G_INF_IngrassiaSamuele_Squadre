@@ -30,6 +30,7 @@ namespace Library
         public Team(string name)
         {
             this.name = name;
+            players = new List<Player>();
             riserva = 0;
             rosa = 0;
         }
@@ -86,7 +87,7 @@ namespace Library
             string playerList = "";
             foreach (Player player in players)
             {
-                playerList += $"Giocatore: {player.Description()} - Ruolo: {player.Role}";
+                playerList += $"Giocatore: {player.Description()} - Ruolo: {player.Role}\n";
             }
             return playerList;
         }
