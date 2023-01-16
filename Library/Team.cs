@@ -25,10 +25,13 @@ namespace Library
         /// </summary>
         const int MAX_RISERVA_PLAYERS = 3;
         const int MAX_ROSA_PLAYERS = 11;
+        int riserva, rosa;
 
         public Team(string name)
         {
             this.name = name;
+            riserva = 0;
+            rosa = 0;
         }
 
         /// <summary>
@@ -40,7 +43,20 @@ namespace Library
         /// <returns>True if player has been inserted</returns>
         public bool AddPlayer(Player player)
         {
-            if ()
+            if ((int)player.Role == 0 && rosa < MAX_ROSA_PLAYERS)
+            {
+                players.Add(player);
+                rosa++;
+                return true;
+            }
+            else if ((int)player.Role == 1 && riserva < MAX_ROSA_PLAYERS)
+            {
+                players.Add(player);
+                riserva++;
+                return true;
+            }
+            else
+                return false;
         }
 
         /// <summary>
@@ -52,7 +68,7 @@ namespace Library
         /// <returns>True if captain has been setted</returns>
         public bool AddCaptain(Player captain)
         {
-            if (captain.Role == 0)
+            if ((int)captain.Role == 0)
             {
                 this.captain = captain;
                 return true;
