@@ -22,10 +22,10 @@ namespace Library
 
         public string Description()
         {
-            return $"{surname} {name}";
+            return $"{surname} {name} {role}";
         }
 
-        public ERole Role { get; }
+        public ERole Role { get { return role;} }
 
     }
 }

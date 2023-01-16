@@ -24,12 +24,12 @@ namespace UnitTest
             Assert.That(team.AddPlayer(new Player("Cognome 9", "Nome 9", Player.ERole.Rosa)), Is.True);
             Assert.That(team.AddPlayer(new Player("Cognome 10", "Nome 10", Player.ERole.Rosa)), Is.True);
             Assert.That(team.AddPlayer(new Player("Cognome 11", "Nome 11", Player.ERole.Rosa)), Is.True);
-            Assert.That(team.AddPlayer(new Player("Cognome 11", "Nome 11", Player.ERole.Rosa)), Is.False);
+            Assert.That(team.AddPlayer(new Player("Cognome 15", "Nome 15", Player.ERole.Rosa)), Is.False);
 
             Assert.That(team.AddPlayer(new Player("Cognome 12", "Nome 12", Player.ERole.Riserva)), Is.True);
             Assert.That(team.AddPlayer(new Player("Cognome 13", "Nome 13", Player.ERole.Riserva)), Is.True);
             Assert.That(team.AddPlayer(new Player("Cognome 14", "Nome 14", Player.ERole.Riserva)), Is.True);
-            Assert.That(team.AddPlayer(new Player("Cognome 11", "Nome 11", Player.ERole.Rosa)), Is.False);
+            Assert.That(team.AddPlayer(new Player("Cognome 16", "Nome 16", Player.ERole.Riserva)), Is.False);
 
         }
 

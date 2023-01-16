@@ -44,13 +44,13 @@ namespace Library
         /// <returns>True if player has been inserted</returns>
         public bool AddPlayer(Player player)
         {
-            if ((int)player.Role == 0 && rosa < MAX_ROSA_PLAYERS)
+            if (player.Role == Player.ERole.Rosa && rosa < MAX_ROSA_PLAYERS)
             {
                 players.Add(player);
                 rosa++;
                 return true;
             }
-            else if ((int)player.Role == 1 && riserva < MAX_ROSA_PLAYERS)
+            else if (player.Role == Player.ERole.Riserva && riserva < MAX_RISERVA_PLAYERS)
             {
                 players.Add(player);
                 riserva++;
@@ -69,7 +69,7 @@ namespace Library
         /// <returns>True if captain has been setted</returns>
         public bool AddCaptain(Player captain)
         {
-            if ((int)captain.Role == 0)
+            if (captain.Role == Player.ERole.Rosa)
             {
                 this.captain = captain;
                 return true;
@@ -87,7 +87,7 @@ namespace Library
             string playerList = "";
             foreach (Player player in players)
             {
-                playerList += $"Giocatore: {player.Description()} - Ruolo: {player.Role}\n";
+                playerList += $"{player.Description()}\n";
             }
             return playerList;
         }
